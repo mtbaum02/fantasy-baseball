@@ -21,64 +21,64 @@
         ],
         "1B": [
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 518692,
+            "name": "Freddie Freeman"
           },
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 575929,
+            "name": "Willson Contreras"
           }
         ],
         "2B": [
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 691785,
+            "name": "Marcelo Mayer"
           },
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 677587,
+            "name": "Brayan Rocchio"
           }
         ],
         "3B": [
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 571970,
+            "name": "Max Muncy"
           },
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 608070,
+            "name": "José Ramírez"
           }
         ],
         "SS": [
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 605141,
+            "name": "Mookie Betts"
           },
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 596115,
+            "name": "Trevor Story"
           }
         ],
         "OF": [
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 606192,
+            "name": "Teoscar Hernández"
           },
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 681624,
+            "name": "Andy Pages"
           },
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 663656,
+            "name": "Kyle Tucker"
           },
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 800050,
+            "name": "Chase DeLauter"
           },
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 701350,
+            "name": "Roman Anthony"
           }
         ],
         "DH": [
@@ -87,8 +87,8 @@
             "name": "Shohei Ohtani"
           },
           {
-            "id": 0,
-            "name": "Empty"
+            "id": 677800,
+            "name": "Wilyer Abreu"
           }
         ],
         "SP": [
