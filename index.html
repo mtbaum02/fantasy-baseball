@@ -172,7 +172,7 @@
 <script>
 const SCORING={single:1,double:2,triple:3,homeRun:4,rbi:2,baseOnBalls:1,runs:2,errors:-5,spWin:50,rpWin:30,saves:20,losses:-10};
 const SEASON=new Date().getFullYear(), MLB_API='https://statsapi.mlb.com/api/v1';
-const PITCHER_POS=['SP','RP'], BATTER_POS=['C','1B','2B','3B','SS','OF'];
+const PITCHER_POS=['SP','RP'], BATTER_POS=['C','1B','2B','3B','SS','OF','DH'];
 let teamsData=null, config=null, statsCache={}, currentTeamId=null, quickSearchTarget=null;
 
 // ROUTING
@@ -311,7 +311,7 @@ function attemptLogin(){
 document.getElementById('loginPassword').addEventListener('keydown',e=>{if(e.key==='Enter')attemptLogin();});
 
 // ADMIN PANEL
-const posLabels={C:'CATCHER','1B':'FIRST BASE','2B':'SECOND BASE','3B':'THIRD BASE',SS:'SHORTSTOP',OF:'OUTFIELD',SP:'STARTING PITCHERS',RP:'RELIEF PITCHERS'};
+const posLabels={C:'CATCHER','1B':'FIRST BASE','2B':'SECOND BASE','3B':'THIRD BASE',SS:'SHORTSTOP',OF:'OUTFIELD',DH:'DESIGNATED HITTER',SP:'STARTING PITCHERS',RP:'RELIEF PITCHERS'};
 function openAdminPanel(id){
   const team=teamsData.teams.find(t=>t.id==id);
   let tab=document.querySelector('.nav-tab[data-page="admin"]');
