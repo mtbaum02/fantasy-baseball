@@ -319,7 +319,7 @@ function renderTeamDetail(team){
   let total=0;
   const bRows=BATTER_POS.flatMap(pos=>(team.roster[pos]||[]).map(p=>{
     const s=statsCache[p.id],pts=calcBatterPts(s?.hitting);if(pts)total+=pts.total;const r=pts?.raw||{};
-    return `<tr><td>${p.name}</td><td><span class="pos-badge">${pos}</span></td><td>${r.avg||'—'}</td><td>${r.hits||'—'}</td><td>${r.doubles||'—'}</td><td>${r.triples||'—'}</td><td>${r.homeRuns||'—'}</td><td>${r.rbi||'—'}</td><td>${r.baseOnBalls||'—'}</td><td>${r.runs||'—'}</td><td>${r.errors||'—'}</td><td class="${pts&&pts.total>=0?'pts-pos':'pts-neg'}">${pts?pts.total.toLocaleString():'—'}</td></tr>`;
+    const singles=r.hits!=null?(r.hits-(r.doubles||0)-(r.triples||0)-(r.homeRuns||0)):'—';return `<tr><td>${p.name}</td><td><span class="pos-badge">${pos}</span></td><td>${r.avg||'—'}</td><td>${singles}</td><td>${r.doubles||'—'}</td><td>${r.triples||'—'}</td><td>${r.homeRuns||'—'}</td><td>${r.rbi||'—'}</td><td>${r.baseOnBalls||'—'}</td><td>${r.runs||'—'}</td><td>${r.errors||'—'}</td><td class="${pts&&pts.total>=0?'pts-pos':'pts-neg'}">${pts?pts.total.toLocaleString():'—'}</td></tr>`;
   }));
   const pRows=PITCHER_POS.flatMap(pos=>(team.roster[pos]||[]).map(p=>{
     const s=statsCache[p.id],pts=calcPitcherPts(s?.pitching,pos);if(pts)total+=pts.total;const r=pts?.raw||{};
@@ -332,7 +332,7 @@ function renderTeamDetail(team){
       <div style="margin-left:auto;text-align:right"><div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:2px;color:var(--muted)">TOTAL PTS</div><div style="font-family:'DM Mono',monospace;font-size:28px;color:var(--accent);font-weight:500">${total.toLocaleString()}</div></div>
     </div>
     <div class="section-label">BATTING</div>
-    <div class="player-table-wrap"><table class="player-table"><thead><tr><th>Player</th><th>POS</th><th>AVG</th><th>H</th><th>2B</th><th>3B</th><th>HR</th><th>RBI</th><th>BB</th><th>R</th><th>E</th><th>PTS</th></tr></thead><tbody>${bRows.join('')}</tbody></table></div>
+    <div class="player-table-wrap"><table class="player-table"><thead><tr><th>Player</th><th>POS</th><th>AVG</th><th>1B</th><th>2B</th><th>3B</th><th>HR</th><th>RBI</th><th>BB</th><th>R</th><th>E</th><th>PTS</th></tr></thead><tbody>${bRows.join('')}</tbody></table></div>
     <div class="section-label">PITCHING</div>
     <div class="player-table-wrap"><table class="player-table"><thead><tr><th>Player</th><th>POS</th><th>W</th><th>L</th><th>SV</th><th>ERA</th><th>IP</th><th>PTS</th></tr></thead><tbody>${pRows.join('')}</tbody></table></div>`;
 }
@@ -492,7 +492,7 @@ function renderChat(){
         <div style="font-size:12px;color:var(--muted)">${loggedIn?`Posting as <strong style="color:var(--accent)">${currentTeamName}</strong>`:'Read-only — login to post'}</div>
       </div>
     </div>
-    <div class="chat-messages" id="chatMessages"><div class="chat-empty"><span style="font-size:28px">💬</span>No messages yet. Gossip about Ric!</div></div>
+    <div class="chat-messages" id="chatMessages"><div class="chat-empty"><span style="font-size:28px">💬</span>No messages yet. Start the trash talk!</div></div>
     ${loggedIn
       ? `<div class="chat-input-row"><input class="chat-input" id="chatInput" placeholder="Talk your trash..." maxlength="300"/><button class="chat-send" id="chatSend" onclick="sendChatMsg()">Send</button></div>`
       : `<div class="chat-login-bar">Want to post? <a onclick="showLoginModal()">Login as your team</a> first.</div>`
