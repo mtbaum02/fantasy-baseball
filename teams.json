@@ -5,117 +5,115 @@
   },
   "teams": [
     {
-      "id": 1,
-      "name": "Gary",
-      "owner": "Gary",
+      "id": 1, "name": "Gary", "owner": "Gary",
       "roster": {
-        "C": [{"id": 663728, "name": "Will Smith"}, {"id": 669221, "name": "Sean Murphy"}],
-        "1B": [{"id": 660670, "name": "Freddie Freeman"}, {"id": 641343, "name": "Pete Alonso"}],
-        "2B": [{"id": 682998, "name": "Jose Altuve"}, {"id": 677951, "name": "Gleyber Torres"}],
-        "3B": [{"id": 608369, "name": "Manny Machado"}, {"id": 572138, "name": "Nolan Arenado"}],
-        "SS": [{"id": 660271, "name": "Fernando Tatis Jr."}, {"id": 664034, "name": "Trea Turner"}],
-        "OF": [{"id": 665742, "name": "Juan Soto"}, {"id": 677594, "name": "Kyle Tucker"}, {"id": 686469, "name": "Julio Rodriguez"}, {"id": 666023, "name": "Yordan Alvarez"}, {"id": 592518, "name": "Bryce Harper"}],
-        "DH": [{"id": 673490, "name": "Masataka Yoshida"}, {"id": 656555, "name": "Rhys Hoskins"}],
-        "SP": [{"id": 592789, "name": "Gerrit Cole"}, {"id": 621111, "name": "Shane Bieber"}, {"id": 656302, "name": "Logan Webb"}, {"id": 668678, "name": "Sandy Alcantara"}],
-        "RP": [{"id": 608566, "name": "Josh Hader"}, {"id": 641154, "name": "Edwin Diaz"}, {"id": 650556, "name": "Ryan Helsley"}, {"id": 669923, "name": "Devin Williams"}]
+        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
       }
     },
     {
       "id": 2, "name": "Eric", "owner": "Eric",
       "roster": {
-        "C": [{"id": 467100, "name": "Yadier Molina"}, {"id": 621512, "name": "Tyler Stephenson"}],
-        "1B": [{"id": 545361, "name": "Mike Trout"}, {"id": 670541, "name": "Nathaniel Lowe"}],
-        "2B": [{"id": 663538, "name": "Luis Arraez"}, {"id": 641355, "name": "DJ LeMahieu"}],
-        "3B": [{"id": 641487, "name": "Rafael Devers"}, {"id": 608371, "name": "Josh Donaldson"}],
-        "SS": [{"id": 596019, "name": "Xander Bogaerts"}, {"id": 660168, "name": "Willy Adames"}],
-        "OF": [{"id": 650333, "name": "Randy Arozarena"}, {"id": 665489, "name": "Jazz Chisholm"}, {"id": 669242, "name": "Michael Harris II"}, {"id": 666185, "name": "Cedric Mullins"}, {"id": 572761, "name": "Andrew McCutchen"}],
+        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
         "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 605483, "name": "Max Scherzer"}, {"id": 663158, "name": "Kevin Gausman"}, {"id": 657006, "name": "Nestor Cortes"}, {"id": 668678, "name": "Carlos Rodon"}],
-        "RP": [{"id": 622491, "name": "Emmanuel Clase"}, {"id": 608648, "name": "Clay Holmes"}, {"id": 641771, "name": "Paul Sewald"}, {"id": 663893, "name": "A.J. Minter"}]
+        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
       }
     },
     {
       "id": 3, "name": "Bob", "owner": "Bob",
       "roster": {
-        "C": [{"id": 663728, "name": "Player A"}, {"id": 669221, "name": "Player B"}],
-        "1B": [{"id": 660670, "name": "Player C"}, {"id": 641343, "name": "Player D"}],
-        "2B": [{"id": 682998, "name": "Player E"}, {"id": 677951, "name": "Player F"}],
-        "3B": [{"id": 608369, "name": "Player G"}, {"id": 572138, "name": "Player H"}],
-        "SS": [{"id": 660271, "name": "Player I"}, {"id": 664034, "name": "Player J"}],
-        "OF": [{"id": 665742, "name": "Player K"}, {"id": 677594, "name": "Player L"}, {"id": 686469, "name": "Player M"}, {"id": 666023, "name": "Player N"}, {"id": 592518, "name": "Player O"}],
+        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
         "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 592789, "name": "Pitcher A"}, {"id": 621111, "name": "Pitcher B"}, {"id": 656302, "name": "Pitcher C"}, {"id": 668678, "name": "Pitcher D"}],
-        "RP": [{"id": 608566, "name": "Reliever A"}, {"id": 641154, "name": "Reliever B"}, {"id": 650556, "name": "Reliever C"}, {"id": 669923, "name": "Reliever D"}]
+        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
       }
     },
     {
       "id": 4, "name": "Steve", "owner": "Steve",
       "roster": {
-        "C": [{"id": 663728, "name": "Player A"}, {"id": 669221, "name": "Player B"}],
-        "1B": [{"id": 660670, "name": "Player C"}, {"id": 641343, "name": "Player D"}],
-        "2B": [{"id": 682998, "name": "Player E"}, {"id": 677951, "name": "Player F"}],
-        "3B": [{"id": 608369, "name": "Player G"}, {"id": 572138, "name": "Player H"}],
-        "SS": [{"id": 660271, "name": "Player I"}, {"id": 664034, "name": "Player J"}],
-        "OF": [{"id": 665742, "name": "Player K"}, {"id": 677594, "name": "Player L"}, {"id": 686469, "name": "Player M"}, {"id": 666023, "name": "Player N"}, {"id": 592518, "name": "Player O"}],
+        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
         "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 592789, "name": "Pitcher A"}, {"id": 621111, "name": "Pitcher B"}, {"id": 656302, "name": "Pitcher C"}, {"id": 668678, "name": "Pitcher D"}],
-        "RP": [{"id": 608566, "name": "Reliever A"}, {"id": 641154, "name": "Reliever B"}, {"id": 650556, "name": "Reliever C"}, {"id": 669923, "name": "Reliever D"}]
+        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
       }
     },
     {
       "id": 5, "name": "Kevin", "owner": "Kevin",
       "roster": {
-        "C": [{"id": 663728, "name": "Player A"}, {"id": 669221, "name": "Player B"}],
-        "1B": [{"id": 660670, "name": "Player C"}, {"id": 641343, "name": "Player D"}],
-        "2B": [{"id": 682998, "name": "Player E"}, {"id": 677951, "name": "Player F"}],
-        "3B": [{"id": 608369, "name": "Player G"}, {"id": 572138, "name": "Player H"}],
-        "SS": [{"id": 660271, "name": "Player I"}, {"id": 664034, "name": "Player J"}],
-        "OF": [{"id": 665742, "name": "Player K"}, {"id": 677594, "name": "Player L"}, {"id": 686469, "name": "Player M"}, {"id": 666023, "name": "Player N"}, {"id": 592518, "name": "Player O"}],
+        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
         "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 592789, "name": "Pitcher A"}, {"id": 621111, "name": "Pitcher B"}, {"id": 656302, "name": "Pitcher C"}, {"id": 668678, "name": "Pitcher D"}],
-        "RP": [{"id": 608566, "name": "Reliever A"}, {"id": 641154, "name": "Reliever B"}, {"id": 650556, "name": "Reliever C"}, {"id": 669923, "name": "Reliever D"}]
+        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
       }
     },
     {
       "id": 6, "name": "Marylou", "owner": "Marylou",
       "roster": {
-        "C": [{"id": 663728, "name": "Player A"}, {"id": 669221, "name": "Player B"}],
-        "1B": [{"id": 660670, "name": "Player C"}, {"id": 641343, "name": "Player D"}],
-        "2B": [{"id": 682998, "name": "Player E"}, {"id": 677951, "name": "Player F"}],
-        "3B": [{"id": 608369, "name": "Player G"}, {"id": 572138, "name": "Player H"}],
-        "SS": [{"id": 660271, "name": "Player I"}, {"id": 664034, "name": "Player J"}],
-        "OF": [{"id": 665742, "name": "Player K"}, {"id": 677594, "name": "Player L"}, {"id": 686469, "name": "Player M"}, {"id": 666023, "name": "Player N"}, {"id": 592518, "name": "Player O"}],
+        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
         "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 592789, "name": "Pitcher A"}, {"id": 621111, "name": "Pitcher B"}, {"id": 656302, "name": "Pitcher C"}, {"id": 668678, "name": "Pitcher D"}],
-        "RP": [{"id": 608566, "name": "Reliever A"}, {"id": 641154, "name": "Reliever B"}, {"id": 650556, "name": "Reliever C"}, {"id": 669923, "name": "Reliever D"}]
+        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
       }
     },
     {
       "id": 7, "name": "Brian", "owner": "Brian",
       "roster": {
-        "C": [{"id": 663728, "name": "Player A"}, {"id": 669221, "name": "Player B"}],
-        "1B": [{"id": 660670, "name": "Player C"}, {"id": 641343, "name": "Player D"}],
-        "2B": [{"id": 682998, "name": "Player E"}, {"id": 677951, "name": "Player F"}],
-        "3B": [{"id": 608369, "name": "Player G"}, {"id": 572138, "name": "Player H"}],
-        "SS": [{"id": 660271, "name": "Player I"}, {"id": 664034, "name": "Player J"}],
-        "OF": [{"id": 665742, "name": "Player K"}, {"id": 677594, "name": "Player L"}, {"id": 686469, "name": "Player M"}, {"id": 666023, "name": "Player N"}, {"id": 592518, "name": "Player O"}],
+        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
         "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 592789, "name": "Pitcher A"}, {"id": 621111, "name": "Pitcher B"}, {"id": 656302, "name": "Pitcher C"}, {"id": 668678, "name": "Pitcher D"}],
-        "RP": [{"id": 608566, "name": "Reliever A"}, {"id": 641154, "name": "Reliever B"}, {"id": 650556, "name": "Reliever C"}, {"id": 669923, "name": "Reliever D"}]
+        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
       }
     },
     {
       "id": 8, "name": "Ray", "owner": "Ray",
       "roster": {
-        "C": [{"id": 663728, "name": "Player A"}, {"id": 669221, "name": "Player B"}],
-        "1B": [{"id": 660670, "name": "Player C"}, {"id": 641343, "name": "Player D"}],
-        "2B": [{"id": 682998, "name": "Player E"}, {"id": 677951, "name": "Player F"}],
-        "3B": [{"id": 608369, "name": "Player G"}, {"id": 572138, "name": "Player H"}],
-        "SS": [{"id": 660271, "name": "Player I"}, {"id": 664034, "name": "Player J"}],
-        "OF": [{"id": 665742, "name": "Player K"}, {"id": 677594, "name": "Player L"}, {"id": 686469, "name": "Player M"}, {"id": 666023, "name": "Player N"}, {"id": 592518, "name": "Player O"}],
+        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
         "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 592789, "name": "Pitcher A"}, {"id": 621111, "name": "Pitcher B"}, {"id": 656302, "name": "Pitcher C"}, {"id": 668678, "name": "Pitcher D"}],
-        "RP": [{"id": 608566, "name": "Reliever A"}, {"id": 641154, "name": "Reliever B"}, {"id": 650556, "name": "Reliever C"}, {"id": 669923, "name": "Reliever D"}]
+        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
+        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
       }
     }
   ]
