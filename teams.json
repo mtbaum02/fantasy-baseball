@@ -6,8 +6,8 @@
   "teams": [
     {
       "id": 1,
-      "name": "Team 1",
-      "owner": "Owner 1",
+      "name": "Gary",
+      "owner": "Gary",
       "roster": {
         "C": [{"id": 663728, "name": "Will Smith"}, {"id": 669221, "name": "Sean Murphy"}],
         "1B": [{"id": 660670, "name": "Freddie Freeman"}, {"id": 641343, "name": "Pete Alonso"}],
