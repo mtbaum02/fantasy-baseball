@@ -5,115 +5,1003 @@
   },
   "teams": [
     {
-      "id": 1, "name": "Gary", "owner": "Gary",
+      "id": 1,
+      "name": "Gary",
+      "owner": "Gary",
       "roster": {
-        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
+        "C": [
+          {
+            "id": 669257,
+            "name": "Will Smith"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "1B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "2B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "3B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SS": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "OF": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "DH": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "RP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ]
       }
     },
     {
-      "id": 2, "name": "Eric", "owner": "Eric",
+      "id": 2,
+      "name": "Eric",
+      "owner": "Eric",
       "roster": {
-        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
+        "C": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "1B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "2B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "3B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SS": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "OF": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "DH": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "RP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ]
       }
     },
     {
-      "id": 3, "name": "Bob", "owner": "Bob",
+      "id": 3,
+      "name": "Bob",
+      "owner": "Bob",
       "roster": {
-        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
+        "C": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "1B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "2B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "3B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SS": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "OF": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "DH": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "RP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ]
       }
     },
     {
-      "id": 4, "name": "Steve", "owner": "Steve",
+      "id": 4,
+      "name": "Steve",
+      "owner": "Steve",
       "roster": {
-        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
+        "C": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "1B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "2B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "3B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SS": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "OF": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "DH": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "RP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ]
       }
     },
     {
-      "id": 5, "name": "Kevin", "owner": "Kevin",
+      "id": 5,
+      "name": "Kevin",
+      "owner": "Kevin",
       "roster": {
-        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
+        "C": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "1B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "2B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "3B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SS": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "OF": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "DH": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "RP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ]
       }
     },
     {
-      "id": 6, "name": "Marylou", "owner": "Marylou",
+      "id": 6,
+      "name": "Marylou",
+      "owner": "Marylou",
       "roster": {
-        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
+        "C": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "1B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "2B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "3B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SS": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "OF": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "DH": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "RP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ]
       }
     },
     {
-      "id": 7, "name": "Brian", "owner": "Brian",
+      "id": 7,
+      "name": "Brian",
+      "owner": "Brian",
       "roster": {
-        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
+        "C": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "1B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "2B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "3B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SS": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "OF": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "DH": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "RP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ]
       }
     },
     {
-      "id": 8, "name": "Ray", "owner": "Ray",
+      "id": 8,
+      "name": "Ray",
+      "owner": "Ray",
       "roster": {
-        "C":  [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "1B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "2B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "3B": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SS": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "OF": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "DH": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "SP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}],
-        "RP": [{"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}, {"id": 0, "name": "Empty"}]
+        "C": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "1B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "2B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "3B": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SS": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "OF": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "DH": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "SP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ],
+        "RP": [
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          },
+          {
+            "id": 0,
+            "name": "Empty"
+          }
+        ]
       }
     }
   ]
