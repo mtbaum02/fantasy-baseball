@@ -429,21 +429,29 @@ function selectQuickResult(id,name){
   closeQuickSearch();
 }
 
-// SAVE TO GITHUB
+// SAVE TO GITHUB (via Cloudflare Worker)
 async function saveRoster(teamId){
   if(!config)return;
   const msg=document.getElementById('adminMsg');
-  msg.innerHTML='<div class="success-banner">Saving to GitHub...</div>';
+  if(!config.workerUrl){
+    msg.innerHTML='<div class="error-banner">⚠ workerUrl not set in config.json. See setup instructions.</div>';
+    return;
+  }
+  msg.innerHTML='<div class="success-banner">Saving...</div>';
   try{
-    const headers={'Authorization':`token ${config.githubToken}`,'Content-Type':'application/json'};
-    const fileData=await(await fetch(`https://api.github.com/repos/${config.githubOwner}/${config.githubRepo}/contents/teams.json`,{headers})).json();
-    if(!fileData.sha)throw new Error('Could not read teams.json from GitHub');
-    const content=btoa(unescape(encodeURIComponent(JSON.stringify(teamsData,null,2))));
-    const res=await fetch(`https://api.github.com/repos/${config.githubOwner}/${config.githubRepo}/contents/teams.json`,{
-      method:'PUT',headers,
-      body:JSON.stringify({message:`Update ${teamsData.teams.find(t=>t.id==teamId)?.name} roster`,content,sha:fileData.sha})
+    // Step 1: get current SHA via worker
+    const getRes=await fetch(config.workerUrl);
+    const fileData=await getRes.json();
+    if(!fileData.sha)throw new Error('Could not read teams.json');
+    // Step 2: save via worker
+    const encoded=btoa(unescape(encodeURIComponent(JSON.stringify(teamsData,null,2))));
+    const putRes=await fetch(config.workerUrl,{
+      method:'PUT',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({message:`Update ${teamsData.teams.find(t=>t.id==teamId)?.name} roster`,content:encoded,sha:fileData.sha})
     });
-    if(!res.ok)throw new Error('GitHub rejected the save — check your token');
+    const result=await putRes.json();
+    if(!putRes.ok)throw new Error(result.error||'Save failed');
     msg.innerHTML='<div class="success-banner">✓ Roster saved! The site will update within a minute.</div>';
     statsCache={};
   }catch(err){msg.innerHTML=`<div class="error-banner">⚠ Save failed: ${err.message}</div>`;}
