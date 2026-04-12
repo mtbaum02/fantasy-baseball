@@ -492,7 +492,7 @@ function renderChat(){
         <div style="font-size:12px;color:var(--muted)">${loggedIn?`Posting as <strong style="color:var(--accent)">${currentTeamName}</strong>`:'Read-only — login to post'}</div>
       </div>
     </div>
-    <div class="chat-messages" id="chatMessages"><div class="chat-empty"><span style="font-size:28px">💬</span>No messages yet. Start the trash talk!</div></div>
+    <div class="chat-messages" id="chatMessages"><div class="chat-empty"><span style="font-size:28px">💬</span>No messages yet. Gossip about Ric!</div></div>
     ${loggedIn
       ? `<div class="chat-input-row"><input class="chat-input" id="chatInput" placeholder="Talk your trash..." maxlength="300"/><button class="chat-send" id="chatSend" onclick="sendChatMsg()">Send</button></div>`
       : `<div class="chat-login-bar">Want to post? <a onclick="showLoginModal()">Login as your team</a> first.</div>`
