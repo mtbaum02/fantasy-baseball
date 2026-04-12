@@ -85,6 +85,27 @@
   .player-row-input:focus{border-color:var(--accent)}
   @media(max-width:900px){.standings-grid{grid-template-columns:1fr}.main{padding:16px}.nav-tabs{padding:16px 16px 0}.site-header{padding:0 16px}.player-row{grid-template-columns:50px 1fr 80px}}
   .page{animation:fadeIn .2s ease} @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+  /* CHAT */
+  .chat-wrap{max-width:700px}
+  .chat-messages{background:var(--surface);border:1px solid var(--border);border-radius:8px 8px 0 0;height:480px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+  .chat-bubble{display:flex;flex-direction:column;max-width:75%}
+  .chat-bubble.mine{align-self:flex-end;align-items:flex-end}
+  .chat-bubble.theirs{align-self:flex-start;align-items:flex-start}
+  .chat-meta{font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:3px}
+  .chat-text{padding:9px 14px;border-radius:10px;font-size:13px;line-height:1.5;word-break:break-word}
+  .chat-bubble.mine .chat-text{background:var(--accent);color:#000;border-radius:10px 10px 2px 10px}
+  .chat-bubble.theirs .chat-text{background:var(--surface2);color:var(--text);border-radius:10px 10px 10px 2px}
+  .chat-input-row{display:flex;gap:0;border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;overflow:hidden}
+  .chat-input{flex:1;background:var(--surface);border:none;padding:14px 16px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none}
+  .chat-input::placeholder{color:var(--muted)}
+  .chat-send{background:var(--accent);border:none;padding:14px 20px;color:#000;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s;white-space:nowrap}
+  .chat-send:hover{background:#33ddff}
+  .chat-send:disabled{opacity:.4;cursor:not-allowed}
+  .chat-login-bar{background:var(--surface);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:14px 16px;text-align:center;color:var(--muted);font-size:13px}
+  .chat-login-bar a{color:var(--accent);cursor:pointer;text-decoration:underline}
+  .chat-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;flex-direction:column;gap:8px}
+  .chat-setup-banner{background:rgba(255,107,53,.08);border:1px solid rgba(255,107,53,.25);border-radius:6px;padding:12px 16px;font-size:12px;color:var(--accent2);margin-bottom:16px;line-height:1.8}
 </style>
 </head>
 <body>
@@ -99,6 +120,7 @@
   <nav class="nav-tabs" id="navTabs">
     <button class="nav-tab active" data-page="standings">Standings</button>
     <button class="nav-tab" data-page="search">Player Search</button>
+    <button class="nav-tab" data-page="chat">💬 Chat</button>
   </nav>
   <main class="main">
     <div id="page-standings" class="page"><div id="standingsContent"><div class="state-msg"><div class="loading-bar" style="max-width:300px;margin:0 auto 12px"></div>Loading standings...</div></div></div>
@@ -113,6 +135,7 @@
       </div>
     </div>
     <div id="page-admin" class="page" style="display:none"><div id="adminContent"></div></div>
+    <div id="page-chat" class="page" style="display:none"><div id="chatContent"></div></div>
   </main>
 </div>
 
@@ -173,7 +196,7 @@
 const SCORING={single:1,double:2,triple:3,homeRun:4,rbi:2,baseOnBalls:1,runs:2,errors:-5,spWin:50,rpWin:30,saves:20,losses:-10};
 const SEASON=new Date().getFullYear(), MLB_API='https://statsapi.mlb.com/api/v1';
 const PITCHER_POS=['SP','RP'], BATTER_POS=['C','1B','2B','3B','SS','OF','DH'];
-let teamsData=null, config=null, statsCache={}, currentTeamId=null, quickSearchTarget=null;
+let teamsData=null, config=null, statsCache={}, currentTeamId=null, currentTeamName=null, quickSearchTarget=null, chatUnsub=null;
 
 // ROUTING
 document.getElementById('navTabs').addEventListener('click',e=>{
@@ -181,7 +204,7 @@ document.getElementById('navTabs').addEventListener('click',e=>{
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   tab.classList.add('active'); showPage(tab.dataset.page);
 });
-function showPage(p){['standings','team','search','admin'].forEach(x=>document.getElementById(`page-${x}`).style.display=x===p?'block':'none');}
+function showPage(p){['standings','team','search','admin','chat'].forEach(x=>document.getElementById(`page-${x}`).style.display=x===p?'block':'none');if(p==='chat')renderChat();}
 function showTeamPage(id){
   let tab=document.querySelector('.nav-tab[data-page="team"]');
   if(!tab){tab=document.createElement('button');tab.className='nav-tab';tab.dataset.page='team';document.getElementById('navTabs').appendChild(tab);}
@@ -233,19 +256,37 @@ async function fetchAllStats(teams){
   await Promise.all([...ids].map(id=>fetchPlayerStats(id)));
 }
 
+// CATEGORY STANDINGS
+function calcTeamCategories(team){
+  let hr=0,rbi=0,hits=0,ab=0,wins=0,saves=0;
+  for(const[pos,players] of Object.entries(team.roster)){
+    for(const p of players){
+      const s=statsCache[p.id];if(!s)continue;
+      if(PITCHER_POS.includes(pos)){
+        if(s.pitching){wins+=(s.pitching.wins||0);saves+=(s.pitching.saves||0);}
+      } else {
+        if(s.hitting){hr+=(s.hitting.homeRuns||0);rbi+=(s.hitting.rbi||0);hits+=(s.hitting.hits||0);ab+=(s.hitting.atBats||0);}
+      }
+    }
+  }
+  const avg=ab>0?hits/ab:0;
+  return{hr,rbi,avg,wins,saves};
+}
+
 // STANDINGS
 function renderStandings(){
-  const teams=teamsData.teams.map(t=>({...t,totalPts:calcTeamTotal(t)})).sort((a,b)=>b.totalPts-a.totalPts);
+  const teams=teamsData.teams.map(t=>({...t,totalPts:calcTeamTotal(t),cats:calcTeamCategories(t)})).sort((a,b)=>b.totalPts-a.totalPts);
   const rc=i=>i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'rank-other';
   const rows=teams.map((t,i)=>`<tr><td><span class="rank-badge ${rc(i)}">${i+1}</span></td><td><span class="team-link" onclick="showTeamPage(${t.id})">${t.name}</span></td><td style="color:var(--muted)">${t.owner}</td><td><span class="pts-value">${t.totalPts.toLocaleString()}</span></td></tr>`).join('');
-  let allB=[],allP=[];
-  for(const t of teamsData.teams)for(const[pos,players] of Object.entries(t.roster))for(const p of players){
-    const s=statsCache[p.id];if(!s)continue;
-    if(PITCHER_POS.includes(pos)){const pts=calcPitcherPts(s.pitching,pos);if(pts&&pts.total>0)allP.push({name:p.name,team:t.name,pos,pts:pts.total});}
-    else{const pts=calcBatterPts(s.hitting);if(pts&&pts.total>0)allB.push({name:p.name,team:t.name,pos,pts:pts.total});}
-  }
-  allB.sort((a,b)=>b.pts-a.pts); allP.sort((a,b)=>b.pts-a.pts);
-  const topRow=(p,i)=>`<div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid rgba(30,45,61,.5)"><span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);width:16px">${i+1}</span><div style="flex:1"><div style="font-size:13px;font-weight:500">${p.name}</div><div style="font-size:11px;color:var(--muted)">${p.team} · <span class="pos-badge ${PITCHER_POS.includes(p.pos)?'pitcher':''}">${p.pos}</span></div></div><span class="pts-total">${p.pts.toLocaleString()}</span></div>`;
+  const catTable=(label,sorted,valFn)=>{
+    const r=sorted.map((t,i)=>`<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid rgba(30,45,61,.4)"><span class="rank-badge ${rc(i)}" style="width:18px;height:18px;font-size:10px">${i+1}</span><span style="flex:1;font-size:12px;font-weight:500">${t.name}</span><span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--accent)">${valFn(t)}</span></div>`).join('');
+    return `<div style="flex:1;min-width:150px"><div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:6px">${label}</div>${r}</div>`;
+  };
+  const byHR=[...teams].sort((a,b)=>b.cats.hr-a.cats.hr);
+  const byRBI=[...teams].sort((a,b)=>b.cats.rbi-a.cats.rbi);
+  const byAVG=[...teams].sort((a,b)=>b.cats.avg-a.cats.avg);
+  const byW=[...teams].sort((a,b)=>b.cats.wins-a.cats.wins);
+  const bySV=[...teams].sort((a,b)=>b.cats.saves-a.cats.saves);
   document.getElementById('standingsContent').innerHTML=`
     <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:24px">
       <h1 style="font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:3px">${teamsData.league.name}</h1>
@@ -253,16 +294,21 @@ function renderStandings(){
     </div>
     <div class="standings-grid">
       <div class="standings-card">
-        <div class="card-header"><span class="card-title">Standings</span><span style="font-size:11px;color:var(--muted);font-family:'DM Mono',monospace">Click team for detail</span></div>
+        <div class="card-header"><span class="card-title">Points Standings</span><span style="font-size:11px;color:var(--muted);font-family:'DM Mono',monospace">Click team for detail</span></div>
         <table class="standings-table"><thead><tr><th>#</th><th>Team</th><th>Owner</th><th>PTS</th></tr></thead><tbody>${rows}</tbody></table>
       </div>
       <div class="standings-card">
-        <div class="card-header"><span class="card-title">Top Performers</span></div>
-        <div style="padding:16px">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:8px">TOP BATTERS</div>
-          ${allB.slice(0,5).map((p,i)=>topRow(p,i)).join('')||'<div style="color:var(--muted);font-size:12px;padding:8px 0">No data yet</div>'}
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:2px;color:var(--muted);margin:16px 0 8px">TOP PITCHERS</div>
-          ${allP.slice(0,5).map((p,i)=>topRow(p,i)).join('')||'<div style="color:var(--muted);font-size:12px;padding:8px 0">No data yet</div>'}
+        <div class="card-header"><span class="card-title">Category Leaders</span></div>
+        <div style="padding:16px;display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:20px;flex-wrap:wrap">
+            ${catTable('HOME RUNS',byHR,t=>t.cats.hr)}
+            ${catTable('RBI',byRBI,t=>t.cats.rbi)}
+            ${catTable('AVG',byAVG,t=>t.cats.avg>0?t.cats.avg.toFixed(3):'—')}
+          </div>
+          <div style="display:flex;gap:20px;flex-wrap:wrap">
+            ${catTable('PITCHER WINS',byW,t=>t.cats.wins)}
+            ${catTable('SAVES',bySV,t=>t.cats.saves)}
+          </div>
         </div>
       </div>
     </div>`;
@@ -306,7 +352,7 @@ function attemptLogin(){
     document.getElementById('loginError').textContent='Incorrect password. Try again.';
     document.getElementById('loginError').style.display='block'; return;
   }
-  hideLoginModal(); currentTeamId=parseInt(id); openAdminPanel(currentTeamId);
+  hideLoginModal(); currentTeamId=parseInt(id); currentTeamName=teamsData.teams.find(t=>t.id==parseInt(id))?.name||null; openAdminPanel(currentTeamId); if(document.getElementById('page-chat').style.display!=='none')renderChat();
 }
 document.getElementById('loginPassword').addEventListener('keydown',e=>{if(e.key==='Enter')attemptLogin();});
 
@@ -418,6 +464,93 @@ async function searchPlayers(){
   btn.disabled=false;btn.textContent='Search';
 }
 
+
+// CHAT
+function renderChat(){
+  const el=document.getElementById('chatContent');
+  if(!config?.firebaseConfig){
+    el.innerHTML=`<div class="chat-wrap">
+      <div class="chat-setup-banner">
+        ⚠ <strong>Firebase setup required for chat.</strong> Add a <code style="font-family:'DM Mono',monospace">firebaseConfig</code> block to your <code style="font-family:'DM Mono',monospace">config.json</code> to enable the group chat. See the README for instructions.
+      </div>
+    </div>`;
+    return;
+  }
+  const loggedIn=!!currentTeamName;
+  el.innerHTML=`<div class="chat-wrap">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px">
+      <div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px">League Chat</h2>
+        <div style="font-size:12px;color:var(--muted)">${loggedIn?`Posting as <strong style="color:var(--accent)">${currentTeamName}</strong>`:'Read-only — login to post'}</div>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages"><div class="chat-empty"><span style="font-size:28px">💬</span>No messages yet. Start the trash talk!</div></div>
+    ${loggedIn
+      ? `<div class="chat-input-row"><input class="chat-input" id="chatInput" placeholder="Talk your trash..." maxlength="300"/><button class="chat-send" id="chatSend" onclick="sendChatMsg()">Send</button></div>`
+      : `<div class="chat-login-bar">Want to post? <a onclick="showLoginModal()">Login as your team</a> first.</div>`
+    }
+  </div>`;
+  if(loggedIn) document.getElementById('chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendChatMsg();});
+  startChatListener();
+}
+
+function startChatListener(){
+  if(!config?.firebaseConfig) return;
+  if(chatUnsub){try{chatUnsub();}catch{} chatUnsub=null;}
+  try{
+    const {initializeApp,getApps}=window.firebaseApp||{};
+    const {getDatabase,ref,onValue,query,limitToLast,orderByChild}=window.firebaseDb||{};
+    if(!initializeApp||!getDatabase){setTimeout(startChatListener,500);return;}
+    const app=getApps().length?getApps()[0]:initializeApp(config.firebaseConfig);
+    const db=getDatabase(app);
+    const msgsRef=query(ref(db,'chat'),orderByChild('ts'),limitToLast(100));
+    chatUnsub=onValue(msgsRef,snap=>{
+      const msgs=[];
+      snap.forEach(c=>msgs.push(c.val()));
+      renderMessages(msgs);
+    });
+  }catch(e){console.error('Chat listener error',e);}
+}
+
+function renderMessages(msgs){
+  const el=document.getElementById('chatMessages');
+  if(!el)return;
+  const wasAtBottom=el.scrollHeight-el.scrollTop-el.clientHeight<60;
+  if(!msgs.length){el.innerHTML='<div class="chat-empty"><span style="font-size:28px">💬</span>No messages yet. Start the trash talk!</div>';return;}
+  el.innerHTML=msgs.map(m=>{
+    const mine=m.team===currentTeamName;
+    const time=m.ts?new Date(m.ts).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}):'';
+    return `<div class="chat-bubble ${mine?'mine':'theirs'}">
+      <div class="chat-meta">${mine?time:m.team+' · '+time}</div>
+      <div class="chat-text">${escapeHtml(m.text)}</div>
+    </div>`;
+  }).join('');
+  if(wasAtBottom) el.scrollTop=el.scrollHeight;
+}
+
+function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+async function sendChatMsg(){
+  if(!currentTeamName||!config?.firebaseConfig)return;
+  const input=document.getElementById('chatInput');
+  const btn=document.getElementById('chatSend');
+  const text=input.value.trim();
+  if(!text)return;
+  btn.disabled=true;
+  try{
+    const {initializeApp,getApps}=window.firebaseApp||{};
+    const {getDatabase,ref,push,serverTimestamp}=window.firebaseDb||{};
+    const app=getApps().length?getApps()[0]:initializeApp(config.firebaseConfig);
+    const db=getDatabase(app);
+    await push(ref(db,'chat'),{team:currentTeamName,text,ts:Date.now()});
+    input.value='';
+    const el=document.getElementById('chatMessages');
+    if(el)el.scrollTop=el.scrollHeight;
+  }catch(e){alert('Failed to send. Check your Firebase config.');}
+  btn.disabled=false;
+  input.focus();
+}
+
 // INIT
 async function init(){
   try{
@@ -432,6 +565,14 @@ async function init(){
   }catch{document.getElementById('standingsContent').innerHTML='<div class="error-banner">⚠ Could not load teams.json.</div>';}
 }
 init();
+</script>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import {initializeApp,getApps} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+  import {getDatabase,ref,onValue,push,query,limitToLast,orderByChild,serverTimestamp} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
+  window.firebaseApp={initializeApp,getApps};
+  window.firebaseDb={getDatabase,ref,onValue,push,query,limitToLast,orderByChild,serverTimestamp};
 </script>
 </body>
 </html>
