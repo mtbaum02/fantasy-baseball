@@ -3,13 +3,13 @@
   "githubOwner": "mtbaum02",
   "githubRepo": "fantasy-baseball",
   "teamPasswords": {
-    "1": "Gary",
-    "2": "Eric",
-    "3": "Bob",
-    "4": "Steve",
-    "5": "Kevin",
-    "6": "Mary",
-    "7": "Brian",
-    "8": "Ray"
+    "Gary": "Gary",
+    "Eric": "Eric",
+    "Bob": "Bob",
+    "Steve": "Steve",
+    "Kevin": "Kevin",
+    "Marylou": "Marylou",
+    "Brian": "Brian",
+    "Ray": "Ray"
   }
 }
